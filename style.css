@@ -766,3 +766,361 @@ footer p{
 }
 
 /* End of Milestone 1 CSS */
+/* ======================================================
+   PHASE 2 - PREMIUM HOME PAGE
+======================================================*/
+
+/* ---------- Navigation ---------- */
+
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:999;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:20px 8%;
+
+    background:rgba(0,0,0,.35);
+    backdrop-filter:blur(20px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.logo{
+    color:#E50914;
+    font-size:2rem;
+    font-weight:800;
+    letter-spacing:3px;
+}
+
+.nav-links{
+    display:flex;
+    gap:35px;
+}
+
+.nav-links span{
+    cursor:pointer;
+    color:#ddd;
+    transition:.3s;
+}
+
+.nav-links span:hover{
+    color:white;
+}
+
+/* ---------- Hero ---------- */
+
+.hero{
+
+    position:relative;
+
+    min-height:75vh;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:8%;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    margin:40px;
+
+    background:
+    linear-gradient(rgba(0,0,0,.45),
+    rgba(0,0,0,.75)),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80");
+
+    background-size:cover;
+
+    background-position:center;
+
+}
+
+.hero-overlay{
+
+    position:absolute;
+    inset:0;
+
+    background:linear-gradient(
+    to top,
+    #060814,
+    transparent 60%);
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:650px;
+
+}
+
+.hero h1{
+
+    font-size:4rem;
+
+    line-height:1.1;
+
+    margin-bottom:20px;
+
+}
+
+.movieInfo{
+
+    color:#b9d4ff;
+
+    margin-bottom:20px;
+
+    font-weight:600;
+
+}
+
+.description{
+
+    color:#ececec;
+
+    line-height:1.9;
+
+    font-size:1.1rem;
+
+    margin-bottom:40px;
+
+}
+
+/* ---------- Buttons ---------- */
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+}
+
+.watch-btn{
+
+    background:white;
+
+    color:black;
+
+    padding:16px 40px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+.watch-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 10px 30px rgba(255,255,255,.35);
+
+}
+
+.list-btn{
+
+    background:rgba(255,255,255,.12);
+
+    color:white;
+
+    padding:16px 40px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    backdrop-filter:blur(15px);
+
+    transition:.3s;
+
+}
+
+.list-btn:hover{
+
+    background:rgba(255,255,255,.22);
+
+}
+
+/* ---------- Continue Watching ---------- */
+
+.continue{
+
+    padding:60px 8%;
+
+}
+
+.continue h2{
+
+    margin-bottom:30px;
+
+    font-size:2rem;
+
+}
+
+.episodes{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+
+    gap:30px;
+
+}
+
+.episode{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:45px 25px;
+
+    border-radius:22px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    transition:.35s;
+
+}
+
+.episode:hover{
+
+    transform:translateY(-10px) scale(1.03);
+
+    box-shadow:0 25px 45px rgba(0,0,0,.45);
+
+}
+
+.episode h3{
+
+    margin-top:15px;
+
+    margin-bottom:10px;
+
+}
+
+.episode p{
+
+    color:#bbb;
+
+}
+
+/* ---------- Quote ---------- */
+
+.quote{
+
+    max-width:900px;
+
+    margin:90px auto;
+
+    text-align:center;
+
+    padding:55px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.quote h2{
+
+    margin-bottom:25px;
+
+}
+
+.quote p{
+
+    line-height:2;
+
+    color:#ddd;
+
+    font-size:1.2rem;
+
+    font-style:italic;
+
+}
+
+/* ---------- Footer ---------- */
+
+footer{
+
+    text-align:center;
+
+    padding:50px;
+
+    color:#888;
+
+}
+
+/* ---------- Responsive ---------- */
+
+@media(max-width:900px){
+
+.navbar{
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+.hero{
+
+margin:20px;
+
+padding:40px;
+
+}
+
+.hero h1{
+
+font-size:2.6rem;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+}
+
+.watch-btn,
+.list-btn{
+
+width:100%;
+
+}
+
+}
