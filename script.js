@@ -1,186 +1,61 @@
-/* ======================================================
-   I NEVER LOOK AWAY
-   script.js
-======================================================*/
+// ========================================
+// LOVEFLIX
+// script.js
+// ========================================
 
-// Elements
+// Play button
 
-const intro = document.getElementById("intro");
-const profiles = document.getElementById("profiles");
-const home = document.getElementById("home");
+const playBtn = document.querySelector(".watch-btn");
 
-const enterBtn = document.getElementById("enterBtn");
-
-// Enter button
-
-enterBtn.addEventListener("click", () => {
-
-    intro.classList.add("fadeOut");
-
-    setTimeout(() => {
-
-        intro.style.display = "none";
-
-        profiles.classList.remove("hidden");
-
-        profiles.classList.add("fade-up");
-
-    }, 800);
-
-});
-
-// Profile Selection
-
-function startMovie(){
-
-    profiles.classList.add("fadeOut");
-
-    setTimeout(()=>{
-
-        profiles.style.display="none";
-
-        home.classList.remove("hidden");
-
-        home.classList.add("fade-up");
-
-        window.scrollTo({
-            top:0,
-            behavior:"smooth"
-        });
-
-    },800);
-
+if (playBtn) {
+    playBtn.addEventListener("click", () => {
+        alert("🎬 Episode 1 coming soon ❤️");
+    });
 }
 
-// Play Button
-
-const playBtn = document.querySelector("header button");
-
-if(playBtn){
-
-playBtn.addEventListener("click",()=>{
-
-alert("🎬 Episode 1 is coming in Milestone 2 ❤️");
-
-});
-
-}
-
-// Keyboard Shortcuts
-
-document.addEventListener("keydown",(e)=>{
-
-if(e.key==="Enter"){
-
-if(!profiles.classList.contains("hidden")){
-
-startMovie();
-
-}
-
-}
-
-});
-
-// Tiny Twinkle Effect
-
-setInterval(()=>{
-
-document.body.style.filter="brightness(1.02)";
-
-setTimeout(()=>{
-
-document.body.style.filter="brightness(1)";
-
-},300);
-
-},7000);
-
-// Shooting Star Creator
+// Shooting stars
 
 const shootingStars = document.getElementById("shooting-stars");
 
-function createStar(){
+function createStar() {
 
-const star=document.createElement("div");
+    if (!shootingStars) return;
 
-star.className="dynamic-star";
+    const star = document.createElement("div");
 
-star.style.position="absolute";
+    star.style.position = "absolute";
+    star.style.width = "150px";
+    star.style.height = "2px";
+    star.style.background = "linear-gradient(to right, white, transparent)";
+    star.style.left = "-200px";
+    star.style.top = Math.random() * 40 + "%";
+    star.style.transform = "rotate(25deg)";
+    star.style.opacity = "0.8";
 
-star.style.width="140px";
+    shootingStars.appendChild(star);
 
-star.style.height="2px";
+    let x = -200;
+    let y = 0;
 
-star.style.background="linear-gradient(to right,#fff,transparent)";
+    const move = setInterval(() => {
 
-star.style.top=Math.random()*40+"%";
+        x += 20;
+        y += 5;
 
-star.style.left="-200px";
+        star.style.left = x + "px";
+        star.style.top = `calc(${Math.random()*40}% + ${y}px)`;
 
-star.style.transform="rotate(25deg)";
+        if (x > window.innerWidth + 300) {
 
-star.style.opacity=".8";
+            clearInterval(move);
+            star.remove();
 
-star.style.pointerEvents="none";
+        }
 
-shootingStars.appendChild(star);
-
-let x=-200;
-
-let y=0;
-
-const move=setInterval(()=>{
-
-x+=20;
-
-y+=5;
-
-star.style.left=x+"px";
-
-star.style.top=`calc(${star.style.top} + ${y}px)`;
-
-if(x>window.innerWidth+300){
-
-clearInterval(move);
-
-star.remove();
+    }, 25);
 
 }
 
-},25);
+setInterval(createStar, 8000);
 
-}
-
-setInterval(createStar,9000);
-
-// Greeting
-
-console.log("❤️ Welcome to I NEVER LOOK AWAY ❤️");
-
-// Future Features
-
-/*
-Milestone 2
-
-✔ Continue Watching
-
-✔ Episode Pages
-
-✔ Gallery
-
-✔ Chat Replay
-
-✔ Love Letter
-
-✔ Proposal
-
-✔ Moving NO Button
-
-✔ Confetti
-
-✔ Music
-
-✔ Voice Narration
-
-*/
+console.log("❤️ LOVEFLIX Loaded");
